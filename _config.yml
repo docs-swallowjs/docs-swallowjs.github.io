@@ -3,7 +3,7 @@
 # Site wide configuration
 ####################################
 #
-title:       "Leonids Jekyll theme"
+title:      "SwallowJs Doc"
 description: "Clean Jekyll blog theme called Leonids."
 url:         # the base hostname & protocol for your site
 
