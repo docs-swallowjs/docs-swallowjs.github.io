@@ -4,7 +4,7 @@
 ####################################
 #
 title:      "SwallowJs Doc"
-description: "Clean Jekyll blog theme called Leonids."
+description: "SwallowJs - Build fast, grow solid | Javascrit Framework"
 url:         # the base hostname & protocol for your site
 
 #
@@ -31,7 +31,7 @@ kramdown:
 ####################################
 #
 owner:
-  name: Your name
+  name: Olatunde Owokoniran
   avatar: avatar.jpg
   job: "Your job"
   bio: "Write about yourself"
