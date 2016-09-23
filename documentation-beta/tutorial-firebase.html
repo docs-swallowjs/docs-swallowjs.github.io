@@ -1,0 +1,250 @@
+---
+layout: default
+title: Swallow Js Documentation || Beta v0.29
+permalink: /doc/tutorial-firebase
+---
+
+<header class="header-2">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar col-sm-12 navbar-fixed-top" role="navigation"
+                 style="top: -6px;z-index: 999;    position: absolute;">
+                {% include menu.html %}
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="header-2-startup-antiflicker header-antiflicker"
+     style="     position: absolute; z-index: 2; left: 0px; top: 0px; width: 100%; height: 70px; background-color: #1b1f23;"></div>
+
+<section class="header-3-sub">
+    <div class="background">&nbsp;</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3 style="font-size: 37px;margin-bottom: 5px;"> Blog build with Firebase </h3>
+                <p> a cloud services provider and backend as a service </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog-4 doc">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div>
+                    <div class="scrollspy-example" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+
+                        <!--intro-->
+                        <div class="div-sections" id="swallow_intro">
+                            <h3> SwallowJs Blog Tutorial </h3>
+                            <p> You’re probably checking out this tutorial because you want to understand more how
+                                SwallowJs works.</p>
+                            <p>This tutorial will walk you through the creation of a simple blog application. We’ll be
+                                getting and installing SwallowJs and also be creating and configuring a new Firebase
+                                project, and creating enough
+                                application logic to list, add, edit, and delete blog posts.</p>
+                            <br>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>Here’s what you’ll need:</p>
+                                    <div>
+                                        <ol>
+                                            <li>Basic Javascript knowledge. but fear not if you’re a procedural fan.
+                                            </li>
+                                            <li>Basic Javascript knowledge. but fear not if you’re a procedural fan.
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--intro-->
+
+                        <!--getting started-->
+                        <div class="div-sections" id="blog_started">
+                            <h3>Let’s get started!</h3>
+
+                            <div>
+                                <p>First, let’s create a fresh project on Firebase. You can do so by going to <code>https://console.firebase.google.com/</code>
+                                </p>
+                            </div>
+                            <p>Click on "Create New Project"</p>
+                            <div class="entry">
+                                <figure>
+                                    <img src="../assets/img/firebase-console.png" class="img-responsive"/>
+                                    <figcaption class="text-muted"> Firebase console.</figcaption>
+                                </figure>
+                            </div>
+
+                            <p> Next, add your project name in the input field and click on "Create Project" </p>
+                            <div class="entry">
+                                <figure>
+                                    <img src="../assets/img/firebase-create-project.png" class="img-responsive"/>
+                                    <figcaption class="text-muted"> Firebase create project modal.</figcaption>
+                                </figure>
+                            </div>
+
+                            <p> After clicking on "Create Project", Firebase will create a project for you (this will
+                                only take a sec) </p>
+                            <p> Next, you will see the landing page as shown bellow, now click on hosting on the left
+                                hand side of the screen <img src="../assets/img/firebase-hosting-button.png"
+                                                             style="width: 192px;border: 1px solid #ddd;"/></p>
+                            <div class="entry">
+                                <figure>
+                                    <img src="../assets/img/firebase-dashboard-console.png" class="img-responsive"/>
+                                    <figcaption class="text-muted"> Firebase dashboard.</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <img src="../assets/img/firebase-hosting.gif" class="img-responsive"/>
+                                    <figcaption class="text-muted"> Firebase Hosting.</figcaption>
+                                </figure>
+                            </div>
+
+                            <p>More info about firebase hosting <br>
+                                <code>https://firebase.google.com/docs/hosting</code><br></p>
+
+                            <p>By this time you are just things ready for your project on firebase and if you don't
+                                really know more about Firebase hosting don't worry, we just need to set things up for
+                                you to be able to have Firebase on your machine before downloading SwallowJs.</p>
+
+                        </div>
+                        <!--getting started-->
+
+                        <!--firebase_cli-->
+                        <div id="firebase_cli">
+                            <h3>Install the Firebase CLI</h3>
+
+                            <p>The Firebase CLI (Command Line Interface) requires Node.js and npm, which can both be
+                                installed by following the instructions on https://nodejs.org/. Installing Node.js also
+                                installs npm.</p>
+                            <p>Once you have Node.js and npm installed, you can install the Firebase CLI via npm:</p>
+
+                            {% highlight html %}npm install -g firebase-tools{% endhighlight %}
+
+                            <p>More help here:<br>
+                                <code>https://firebase.google.com/docs/hosting/quickstart</code><br>
+                            </p>
+                        </div>
+                        <!--firebase_cli-->
+
+                        <!--firebase_cli-->
+                        <div id="getting_swallow">
+                            <h3> Getting SwallowJs</h3>
+                            <p> First, you need to get the firebase.json file </p>
+                            <p>The firebase init command creates a firebase.json configuration file in the root of your
+                                project's directory. Your default firebase.json Hosting configuration will look like
+                                this:</p>
+{% highlight html %}
+{
+    "hosting": {
+        "public": "app",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
+}
+{% endhighlight %}
+                            <p>The file's default properties - public, and ignore—are described in detail below.</p>
+{% highlight html %}
+"public": "app"
+{% endhighlight %}
+                            <p><strong>required</strong> - The public setting tells the firebase command which directory
+                                to upload to Firebase Hosting. This directory must be inside the project directory and
+                                must exist. The default value is a directory named "public" in your project directory.
+                            </p>
+                            <br>
+
+                            <h4> Connecting SwallowJs with Firebase </h4>
+                            <p>Now that you have add your project to Firebase and you have a folder named "app" as listed
+                                in your firebase.json configuration file ("public": "app") you can clone the repository
+                                using <a href="http://git-scm.com/">git</a>. <code>git clone git://github.com/hurlatunde/swallow.js.git</code></p>
+
+                            <p>Regardless of how you downloaded it, place the code inside of your DocumentRoot/app. Once
+                                finished, your directory setup should look something like the following:</p>
+{% highlight html %}
+/path_to_document_root
+   /app
+      /assets
+      /component
+      /elements
+      /layouts
+      index.html
+   firebase.json
+{% endhighlight %}
+                            <p> It’s our aim to increase productivity and make coding more enjoyable. we hope you see
+                                that important <strong>Firebase</strong> with <strong>SwallowJs</strong> is at easy as it could be.</p>
+                    </div>
+                    </div>
+                    <!--firebase_cli-->
+
+                    <!--setting up database -->
+                    <div id="creating_blog_database">
+                        <h3> Creating the Blog Database </h3>
+                        <p>Next, let’s set up the underlying database for our blog. If you haven’t already done so, Right now,
+                            we’ll just create a single node to store our posts. We’ll also throw in a few posts right
+                            now to use for testing purposes.</p>
+
+                        <div class="entry">
+                            <p>Go back to your Firebase project <code>https://console.firebase.google.com/</code>. </p>
+                            <p>Click on "Database"</p>
+                            <figure>
+                                <img src="../assets/img/firebase-database.png" class="img-responsive"/>
+                                <figcaption class="text-muted"> Firebase console.</figcaption>
+                            </figure>
+                        </div>
+                        <p>Use the following json statements into your Firebase database:</p>
+{% highlight html %}
+{
+    "posts" : {
+        "post_one" : {
+            "author" : "Olatunde Owokoniran",
+            "body" : "This is the post body with innovate resource-leveling growth strategies rather than flexible human capital.",
+            "title" : "The title "
+        },
+        "post_three" : {
+            "author" : "Olatunde Owokoniran",
+            "body" : " This is really exciting! Not, but in globally innovate resource-leveling growth strategies rather than flexible human capital",
+            "title" : "Title strikes back"
+        },
+        "post_two" : {
+            "author" : "Olatunde Owokoniran",
+            "body" : "And the post body follows with globally innovate resource-leveling growth strategies rather than flexible human capital.",
+            "title" : "A title once again "
+        }
+    }
+}
+{% endhighlight %}
+                        <p>Or just import a demo <a href="../assets/file/swallow-blog-export.json" download target="_blank">Data (JSON)</a> file </p>
+
+                    </div>
+                    <!--setting up database -->
+
+                    <div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="related-articles">
+                    <h6> Preface </h6>
+                    <ul>
+                        <li class=""><a href="#swallow_intro"> Blog Tutorial </a></li>
+                        <li class=""><a href="#blog_started"> Get Started </a></li>
+                        <li class=""><a href="#firebase_cli"> Getting Firebase CLI </a></li>
+                        <li class=""><a href="#getting_swallow"> Getting SwallowJs </a></li>
+                        <li class=""><a href="#creating_blog_database"> Blog Database </a></li>
+                        <li class=""><a href="#database_configuration"> CakePHP Database Configuration Database Configuration </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

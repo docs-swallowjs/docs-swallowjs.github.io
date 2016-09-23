@@ -1,0 +1,19 @@
+{
+  "posts" : {
+    "post_one" : {
+      "author" : "Olatunde Owokoniran",
+      "body" : "This is the post body with innovate resource-leveling growth strategies rather than flexible human capital.",
+      "title" : "The title "
+    },
+    "post_three" : {
+      "author" : "Olatunde Owokoniran",
+      "body" : " This is really exciting! Not, but in globally innovate resource-leveling growth strategies rather than flexible human capital",
+      "title" : "Title strikes back"
+    },
+    "post_two" : {
+      "author" : "Olatunde Owokoniran",
+      "body" : "And the post body follows with globally innovate resource-leveling growth strategies rather than flexible human capital.",
+      "title" : "A title once again "
+    }
+  }
+}
