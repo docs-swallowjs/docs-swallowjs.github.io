@@ -1995,7 +1995,7 @@ section * {
     font-size: 35px;
     margin: 0 0 35px;
     font-size: 35px;
-    margin: 35px 0 22px 0;
+    margin: 53px 0 22px 0;
 }
 .blog-4 h6 {
     font-size: 20px;
@@ -2147,4 +2147,13 @@ section * {
     color: #1abc9c;
     font-size: 13px;
     font-weight: 500;
+}
+
+figure figcaption {
+    border-bottom: 1px solid #DDD;
+    padding: 10px 0;
+}
+
+.entry figure {
+    margin: 30px 0;
 }
