@@ -9,7 +9,9 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.231;
+    position: relative;
 }
+
 
 input,
 button,
@@ -2315,4 +2317,16 @@ p strong {
     height: 100%;
     background: rgba(27, 31, 35, 0.87);
     opacity: 0.999;
+}
+
+.blog-4 h3 {
+    font-size: 35px;
+    margin: 0 0 35px;
+    font-size: 35px;
+    margin: 43px 0 22px 0;
+    padding-top: 20px;
+}
+
+.blog-4 .related-articles a:hover, .blog-4 .related-articles a:focus, .blog-4 .related-articles a.active {
+    color: #13584b;
 }

@@ -100,7 +100,7 @@ permalink: /doc/
             <div class="col-sm-3">
                 <div class="related-articles" id="related-articles">
                     <h6> Preface </h6>
-                    <ul>
+                    <ul id="navbar-doc-side">
                         <li class=""><a href="#swallow_intro"> SwallowJs Intro</a></li>
                         <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" id="dropdown_tutorial" data-toggle="dropdown">
@@ -153,3 +153,7 @@ permalink: /doc/
 
     </div>
 </div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-doc-side' })
+</script>
