@@ -2294,3 +2294,15 @@ figure figcaption {
     max-width: 428px;
     margin-top: 14px;
 }
+
+.header-2 .navbar .nav > li > a {
+    padding: 29px 0 28px;
+    font-size: 13px;
+    font-weight: 500;
+     letter-spacing: inherit;
+    color: #ffffff;
+}
+
+p strong {
+    cursor: pointer! important;
+}

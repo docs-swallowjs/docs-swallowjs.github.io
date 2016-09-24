@@ -7,7 +7,13 @@
 <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.svg.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.svganim.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.parallax.min.js"></script>
-<script type="text/javascript" src="{{ site.url }}/assets/js/startup-kit.js"></script>
+<!--<script type="text/javascript" src="{{ site.url }}/assets/js/startup-kit.js"></script>-->
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
 
 {% if site.owner.google.analytics %}
 <!-- Asynchronous Google Analytics snippet -->
