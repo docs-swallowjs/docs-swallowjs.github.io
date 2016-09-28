@@ -35,15 +35,16 @@ permalink: /doc/
         <div class="row">
             <div class="col-sm-9">
                 <div>
-                    <div class="scrollspy-example" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                    <div class="scrollspy-example" data-offset="0">
+
+                        <div id="top">
+                            </div>
 
                         <!--intro-->
                         <div class="div-sections" id="swallow_intro">
-                            <h3> Intro </h3>
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    This version of the documentation is for SwallowJs v0.29 - Beta
-                                </div>
+                            <h3> SwallowJs Intro </h3>
+                            <div class="alert alert-warning">
+                                This version of the documentation is for SwallowJs v0.29 - Beta
                             </div>
 
                             <p> We hope to maintain a high level of quality, validity and accuracy for
@@ -111,48 +112,13 @@ permalink: /doc/
                             </ul>
                         </li>
                         <li class=""><a href="#stuck"> Getting Help </a></li>
+                        <li class=""><a href="#top" style="font-size: 13px;">  Back to top  </a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<div>
-    <div class="hide">
-
-        <div>
-        </div>
-
-        <nav class="navbar navbar-default navbar-static" id="navbar-example2">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button class="collapsed navbar-toggle" type="button" data-toggle="collapse"
-                            data-target=".bs-example-js-navbar-scrollspy"><span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    </button>
-                    <a href="#" class="navbar-brand">Project Name</a></div>
-                <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
-                    <ul class="nav navbar-nav">
-                        <li class=""><a href="#fat">@fat</a></li>
-                        <li class=""><a href="#mdo">@mdo</a></li>
-                        <li class="dropdown active"><a href="#" class="dropdown-toggle" id="navbarDrop1"
-                                                       data-toggle="dropdown" role="button" aria-haspopup="true"
-                                                       aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDrop1">
-                                <li class="active"><a href="#one">one</a></li>
-                                <li class=""><a href="#two">two</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class=""><a href="#three">three</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    </div>
-</div>
 
 <script>
     $('body').scrollspy({ target: '#navbar-doc-side' })
