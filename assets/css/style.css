@@ -2330,3 +2330,7 @@ p strong {
 .blog-4 .related-articles a:hover, .blog-4 .related-articles a:focus, .blog-4 .related-articles a.active {
     color: #13584b;
 }
+
+.panel .panel {
+    margin-bottom: 5px;
+}

@@ -7,7 +7,8 @@ permalink: /doc/
 <header class="header-2">
     <div class="container">
         <div class="row">
-            <nav class="navbar col-sm-12 navbar-fixed-top" role="navigation" style="top: -6px;z-index: 999;    position: absolute;">
+            <nav class="navbar col-sm-12 navbar-fixed-top" role="navigation"
+                 style="top: -6px;z-index: 999;    position: absolute;">
                 {% include menu.html %}
             </nav>
         </div>
@@ -38,7 +39,7 @@ permalink: /doc/
                     <div class="scrollspy-example" data-offset="0">
 
                         <div id="top">
-                            </div>
+                        </div>
 
                         <!--intro-->
                         <div class="div-sections" id="swallow_intro">
@@ -72,7 +73,8 @@ permalink: /doc/
                                         <div class="text-center">
                                             <img src="../assets/img/firebase.png" class="img-responsive"/>
                                             <div>
-                                                <a href="/doc/tutorial-firebase" class="btn btn-inverse"> Blog build with cloud
+                                                <a href="/doc/tutorial-firebase" class="btn btn-inverse"> Blog build
+                                                    with cloud
                                                     services provider</a>
                                             </div>
                                         </div>
@@ -89,6 +91,14 @@ permalink: /doc/
                             </div>
                         </div>
                         <!--Build-->
+
+                        <div id="services">
+                            <h3> Services </h3>
+                            <p> Services are the heart of your application. storage and retrieval of your data.
+                                <strong><a href="/doc/services-firebase"> Read more on Firebase services </a> </strong> or
+                                <strong><a href="/doc/services-derver-side"> Read more on Server Side services </a> </strong>
+                            </p>
+                        </div>
 
                         <div id="stuck">
                             <h3>Getting Help</h3>
@@ -111,8 +121,9 @@ permalink: /doc/
                                 <li><a href="#tutorial_blog_server"> Blog with Server </a></li>
                             </ul>
                         </li>
-                        <li class=""><a href="#stuck"> Getting Help </a></li>
-                        <li class=""><a href="#top" style="font-size: 13px;">  Back to top  </a></li>
+                        <li class=""><a href="#swallow_intro"> SwallowJs Intro</a></li>
+                        <li class=""><a href="#services"> Services </a></li>
+                        <li class=""><a href="#top" style="font-size: 13px;"> Back to top </a></li>
                     </ul>
                 </div>
             </div>
@@ -121,5 +132,5 @@ permalink: /doc/
 </section>
 
 <script>
-    $('body').scrollspy({ target: '#navbar-doc-side' })
+    $('body').scrollspy({target: '#navbar-doc-side'})
 </script>
