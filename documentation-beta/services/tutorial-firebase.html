@@ -1,0 +1,352 @@
+---
+layout: default
+title: SwallowJs Firebase services documentation || Beta v0.29
+permalink: /doc/services-firebase
+---
+<div id="top"></div>
+
+<header class="header-2">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar col-sm-12 navbar-fixed-top" role="navigation"
+                 style="top: -6px;z-index: 999;    position: absolute;">
+                {% include menu.html %}
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="header-2-startup-antiflicker header-antiflicker"
+     style=" position: absolute; z-index: 2; left: 0px; top: 0px; width: 100%; height: 70px; background-color: #1b1f23;"></div>
+
+<section class="header-3-sub">
+    <div class="background">&nbsp;</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3 style="font-size: 37px;margin-bottom: 5px;"> Services (Firebase) </h3>
+                <p> Services is fully responsible for managing almost everything regarding your data, its interactions,
+                    as well as the evolution of information workflow. </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog-4 doc">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div>
+                    <div class="scrollspy-example" data-offset="0">
+
+                        <div id="swallow_intro">
+                            <h3> Services (Firebase) </h3>
+                            <p>Services is fully responsible for managing almost everything regarding your data, its
+                                interactions,
+                                as well as the evolution of information workflow.</p>
+
+                            <p> And as you that this is mainly connection <strong>Firebase</strong> data system reliable
+                                for storing and syncing data in real time across all connected clients </p>
+                        </div>
+
+                        <!--findOne-->
+                        <div id="find-one">
+                            <h3> findOne <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.findOne</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a href="#">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p>Retrieve a resource from Firebase server.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.findOne(
+                                            params, [[success],[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Retrieve a single resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        Values to filter the request or results with. <code>
+                                                        params.path </code>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (data)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> data</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The callback
+                                                                receives the retrieved resource as <code> data </code>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-danger">
+                                                            <div class="panel-heading"> data.error</div>
+                                                            <div class="panel-body">
+                                                                A callback when an error occurs. The callback receives
+                                                                an object <code> data.error </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Use </h4>
+                                    <p><code> FirebaseService.findOne() </code> is used to
+                                        retrieve a model instance from the server. </p>
+                                    <p> Use <code> findOne </code> like: </p>
+{% highlight html %}
+FirebaseService.findOne({
+    path: 'posts/post_one'
+}, function(data) {
+    if(!data.error) {
+        console.log(data);
+    } else {
+        console.log(data);
+    }
+});
+{% endhighlight %}
+                                    <p>The return data should look like:</p>
+{% highlight html %}
+    {author: "John Deauthor", body: "Conveniently harness fictionalized communities high-impact markets under whelm go.", title: "The post title ", node_id: "post_one"}
+{% endhighlight %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--findOne-->
+
+                        <!--findAll-->
+                        <div id="find-all">
+                            <h3> findAll <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.findAll</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a href="#">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p>Retrieve multiple resources from Firebase server.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.findAll(
+                                            params, [[success],[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Retrieve multiple resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        Values to filter the request or results with.
+                                                        <code> params.path </code> ,
+                                                        <code> params.limit </code>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (data)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> data</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The callback
+                                                                receives the retrieved resource as <code> data </code>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-danger">
+                                                            <div class="panel-heading"> data.error</div>
+                                                            <div class="panel-body">
+                                                                A callback when an error occurs. The callback receives
+                                                                an object <code> data.error </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Use </h4>
+                                    <p><code> FirebaseService.findAll() </code> is used to
+                                        retrieve a model instance from the server. </p>
+                                    <p> Use <code> findAll </code> like: </p>
+{% highlight html %}
+FirebaseService.findOne({
+    path: '/author/posts'
+}, function(data) {
+    if(!data.error) {
+        console.log(data);
+    } else {
+        console.log(data);
+    }
+});
+{% endhighlight %}
+                                    <p>The return data should look like:</p>
+{% highlight html %}
+{
+    data: [
+        {author: "John Deauthor", body: "post body content.", title: "The post title ", node_id: "post_one"},
+        {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_two"},
+        {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_three"},
+    ]
+{
+{% endhighlight %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--findAll-->
+
+                        <!--saveData-->
+                        <div id="save-data">
+                            <h3> saveData <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.saveData</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a href="#">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p>Save/update to Firebase server.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.saveData( params, [[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Retrieve a single resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        Values to filter the request or results with.
+                                                        <code> params.path </code> ,
+                                                        <code> params.data </code>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (data)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-danger">
+                                                            <div class="panel-heading"> data.error</div>
+                                                            <div class="panel-body">
+                                                                A callback when an error occurs. The callback receives
+                                                                an object <code> data.error </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Using <code>saveData</code> to create an instance. </h4>
+                                    <p><code> FirebaseService.saveData() </code> is used to
+                                        retrieve a model instance from the server. </p>
+                                    <p> If <code>saveData()</code> is called an instance is created in Firebase. </p>
+
+{% highlight html %}
+FirebaseModal.saveData({
+    path: '/author/posts',
+    data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
+}, function(data) {
+    if(!data.error) {
+        console.log(data);
+    } else {
+        console.log(data);
+    }
+});
+{% endhighlight %}
+                                    <br>
+                                    <p> If <code>updateData()</code> is update the instance created on Firebase base on
+                                        the node key in this case . <code>-KT-kz68IJrOajjwg865</code></p>
+{% highlight html %}
+FirebaseModal.updateData({
+    path: '/author/posts/-KT-kz68IJrOajjwg865',
+    data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
+}, function(data) {
+    if(!data.error) {
+        console.log(data);
+    } else {
+        console.log(data);
+    }
+});
+{% endhighlight %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--saveData-->
+
+                        <!--<div id="stuck">-->
+                        <!--<h3>Getting Help</h3>-->
+                        <!--If you’re stuck, there are a number to help you out,we are always ready to listen-->
+                        <!--</div>-->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="related-articles" id="related-articles">
+                    <br>
+                    <br>
+                    <br>
+                    <ul id="navbar-doc-side">
+                        <li class=""><a href="#swallow_intro"> Services </a></li>
+                        <li class=""><a href="#find-one"> findOne </a></li>
+                        <li class=""><a href="#find-all"> findAll </a></li>
+                        <li class=""><a href="#save-data"> saveData & updateData </a></li>
+                        <li class=""><a href="#top" style="font-size: 13px;"> Back to top </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $('body').scrollspy({target: '#navbar-doc-side'})
+</script>
