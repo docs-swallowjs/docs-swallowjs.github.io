@@ -46,8 +46,8 @@ permalink: /doc/services-firebase
                                 interactions,
                                 as well as the evolution of information workflow.</p>
 
-                            <p> And as you that this is mainly connection <strong>Firebase</strong> data system reliable
-                                for storing and syncing data in real time across all connected clients </p>
+                            <p> And as you that the system main connection is [ <strong>Firebase</strong> data system reliable
+                                for storing and syncing data in real time across all connected clients ]</p>
                         </div>
 
                         <!--findOne-->
@@ -63,7 +63,7 @@ permalink: /doc/services-firebase
                                 <div style="clear: both;"></div>
                             </div>
 
-                            <p>Retrieve a resource from Firebase server.</p>
+                            <p>Retrieve a node from Firebase server.</p>
                             <br>
 
                             <div class="row">
@@ -149,7 +149,7 @@ FirebaseService.findOne({
                                 <div style="clear: both;"></div>
                             </div>
 
-                            <p>Retrieve multiple resources from Firebase server.</p>
+                            <p>Retrieve multiple nodes from Firebase server.</p>
                             <br>
 
                             <div class="row">
@@ -242,7 +242,7 @@ FirebaseService.findOne({
                                 <div style="clear: both;"></div>
                             </div>
 
-                            <p>Save/update to Firebase server.</p>
+                            <p>Save/update node to Firebase server.</p>
                             <br>
 
                             <div class="row">
@@ -289,7 +289,7 @@ FirebaseService.findOne({
                                     <p> If <code>saveData()</code> is called an instance is created in Firebase. </p>
 
 {% highlight html %}
-FirebaseModal.saveData({
+FirebaseService.saveData({
     path: '/author/posts',
     data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
 }, function(data) {
@@ -304,7 +304,7 @@ FirebaseModal.saveData({
                                     <p> If <code>updateData()</code> is update the instance created on Firebase base on
                                         the node key in this case . <code>-KT-kz68IJrOajjwg865</code></p>
 {% highlight html %}
-FirebaseModal.updateData({
+FirebaseService.updateData({
     path: '/author/posts/-KT-kz68IJrOajjwg865',
     data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
 }, function(data) {
