@@ -24,8 +24,8 @@ permalink: /doc/services-firebase
         <div class="row">
             <div class="col-sm-8">
                 <h3 style="font-size: 37px;margin-bottom: 5px;"> Services (Firebase) </h3>
-                <p> Services is fully responsible for managing almost everything regarding your data, its interactions,
-                    as well as the evolution of information workflow. </p>
+                <!--<p> Services is fully responsible for managing almost everything regarding your data, its interactions,-->
+                    <!--as well as the evolution of information workflow. </p>-->
 
             </div>
         </div>
@@ -41,13 +41,10 @@ permalink: /doc/services-firebase
                     <div class="scrollspy-example" data-offset="0">
 
                         <div id="swallow_intro">
-                            <h3> Services (Firebase) </h3>
+                            <h3> Understanding SwallowJS (Firebase) Services </h3>
                             <p>Services is fully responsible for managing almost everything regarding your data, its
-                                interactions,
-                                as well as the evolution of information workflow.</p>
-
-                            <p> And as you that the system main connection is [ <strong>Firebase</strong> data system reliable
-                                for storing and syncing data in real time across all connected clients ]</p>
+                                interactions, as well as the evolution of information workflow.Understanding that this connects mainly with <strong>Firebase</strong> data system reliable
+                                for storing and syncing data in real time across all connected clients </p>
                         </div>
 
                         <!--findOne-->
@@ -120,8 +117,10 @@ FirebaseService.findOne({
     path: 'posts/post_one'
 }, function(data) {
     if(!data.error) {
+        // success
         console.log(data);
     } else {
+        // error
         console.log(data);
     }
 });
@@ -207,8 +206,10 @@ FirebaseService.findOne({
     path: '/author/posts'
 }, function(data) {
     if(!data.error) {
+        // success
         console.log(data);
     } else {
+        // error
         console.log(data);
     }
 });
@@ -294,8 +295,10 @@ FirebaseService.saveData({
     data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
 }, function(data) {
     if(!data.error) {
+        // success
         console.log(data);
     } else {
+        // error
         console.log(data);
     }
 });
@@ -309,8 +312,10 @@ FirebaseService.updateData({
     data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
 }, function(data) {
     if(!data.error) {
+        // success
         console.log(data);
     } else {
+        // error
         console.log(data);
     }
 });
@@ -335,7 +340,7 @@ FirebaseService.updateData({
                     <br>
                     <br>
                     <ul id="navbar-doc-side">
-                        <li class=""><a href="#swallow_intro"> Services </a></li>
+                        <li class=""><a href="#swallow_intro"> Understanding Services </a></li>
                         <li class=""><a href="#find-one"> findOne </a></li>
                         <li class=""><a href="#find-all"> findAll </a></li>
                         <li class=""><a href="#save-data"> saveData & updateData </a></li>
