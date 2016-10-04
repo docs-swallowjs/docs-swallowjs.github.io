@@ -289,7 +289,7 @@ FirebaseService.findOne({
                                     <p> If <code>saveData()</code> is called an instance is created in Firebase. </p>
 
 {% highlight html %}
-FirebaseModal.saveData({
+FirebaseService.saveData({
     path: '/author/posts',
     data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
 }, function(data) {
@@ -304,7 +304,7 @@ FirebaseModal.saveData({
                                     <p> If <code>updateData()</code> is update the instance created on Firebase base on
                                         the node key in this case . <code>-KT-kz68IJrOajjwg865</code></p>
 {% highlight html %}
-FirebaseModal.updateData({
+FirebaseService.updateData({
     path: '/author/posts/-KT-kz68IJrOajjwg865',
     data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
 }, function(data) {
