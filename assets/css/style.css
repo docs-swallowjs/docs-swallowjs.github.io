@@ -2389,3 +2389,15 @@ p strong {
     text-transform: none;
     line-height: 26px;
 }
+
+.content-36 h2 {
+    color: #fff;
+    font-size: 66px;
+    line-height: 65px;
+    margin: 0 0 38px;
+    width: 80%;
+    letter-spacing: -2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-weight: 300;
+}

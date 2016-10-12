@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a71effe9-440a-49d7-8000-ba95f3716bd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CNAME" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/swallo_logo.png" afterPath="$PROJECT_DIR$/assets/img/swallo_logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/swallo_logo_footer.png" afterPath="$PROJECT_DIR$/assets/img/swallo_logo_footer.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/menu.html" afterPath="$PROJECT_DIR$/_includes/menu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="docs.swallow.js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="2380" column="0" selection-start-line="2380" selection-start-column="0" selection-end-line="2380" selection-end-column="0" />
+            <state relative-caret-position="748">
+              <caret line="2402" column="1" selection-start-line="2402" selection-start-column="1" selection-end-line="2402" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -68,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -376,12 +370,12 @@
       <workItem from="1474787384547" duration="18538000" />
       <workItem from="1475399220154" duration="561000" />
       <workItem from="1475467917272" duration="1858000" />
-      <workItem from="1476174306054" duration="5841000" />
+      <workItem from="1476174306054" duration="6124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77504000" />
+    <option name="totallyTimeSpent" value="77787000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,14 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNAME">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -857,14 +843,6 @@
             <element signature="n#style#0;n#path#1;n#svg#0;n#a#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="2380" column="0" selection-start-line="2380" selection-start-column="0" selection-end-line="2380" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,6 +870,22 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNAME">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="2402" column="1" selection-start-line="2402" selection-start-column="1" selection-end-line="2402" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
