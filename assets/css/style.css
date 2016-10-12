@@ -1931,6 +1931,9 @@ section * {
     font-size: 35px;
     font-weight: normal;
     color: #2c3e50;
+
+    font-size: 49px;
+    font-weight: 300;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
 }
@@ -2374,4 +2377,15 @@ p strong {
 
 .header-2-startup-antiflicker {
     background-color: #2c3e50! important;
+}
+
+.content-5 .features > [class*="col-sm-"] h6 {
+    font-size: 32px;
+    font-weight: normal;
+    color: #34495e;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin-bottom: 14px;
+    text-transform: none;
+    line-height: 26px;
 }
