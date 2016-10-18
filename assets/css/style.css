@@ -976,9 +976,12 @@ section * {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    opacity: 20;
-    filter: alpha(opacity=2000);
-    opacity: 0.2;
+    /*opacity: 20;*/
+    /*filter: alpha(opacity=2000);*/
+    /*opacity: 0.2;*/
+    /*filter: alpha(opacity=20);*/
+
+    opacity: 0.6;
     filter: alpha(opacity=20);
 }
 
@@ -1852,14 +1855,19 @@ section * {
     margin-bottom: 20px;
     font-weight: 300;
     font-weight: 700;
+
+    font-weight: 300;
+    font-size: 45px! important;
 }
 .header-3-sub p {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: normal;
-    color: #7f8c8d;
+    color: #2c3e50;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.9;
+    line-height: normal;
+    font-weight: 200;
 }
+
 @media (max-width: 480px) {
     .header-3-sub {
         padding-top: 100px;
@@ -1902,7 +1910,7 @@ section * {
 
 .content-36 p {
     margin: 0 auto;
-    width: 67%;
+    width: 72%;
     font-size: 20px;
     line-height: 31px;
     font-weight: 100;
@@ -1923,6 +1931,9 @@ section * {
     font-size: 35px;
     font-weight: normal;
     color: #2c3e50;
+
+    font-size: 49px;
+    font-weight: 300;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
 }
@@ -2113,6 +2124,11 @@ section * {
     font-size: 17px;
     font-weight: 500;
 }
+.blog-4 .related-articles a {
+    color: #1abc9c;
+    font-size: 18px;
+    font-weight: 300;
+}
 .blog-4 .related-articles a:hover,
 .blog-4 .related-articles a:focus,
 .blog-4 .related-articles a.active {
@@ -2299,9 +2315,9 @@ figure figcaption {
 
 .header-2 .navbar .nav > li > a {
     padding: 29px 0 28px;
-    font-size: 13px;
-    font-weight: 500;
-     letter-spacing: inherit;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: normal;
     color: #ffffff;
 }
 
@@ -2327,10 +2343,61 @@ p strong {
     padding-top: 20px;
 }
 
+.blog-4 h3 {
+    font-size: 35px;
+    margin: 0 0 35px;
+    font-size: 36px;
+    margin: 43px 0 22px 0;
+    padding-top: 20px;
+    font-weight: 300;
+}
+
 .blog-4 .related-articles a:hover, .blog-4 .related-articles a:focus, .blog-4 .related-articles a.active {
     color: #13584b;
 }
 
 .panel .panel {
     margin-bottom: 5px;
+}
+
+.header-2-sub .hero-unit h1 {
+    margin: 0 0 18px;
+
+    font-weight: normal;
+    color: #ffffff;
+    font-weight: 600;
+
+
+    line-height: 65px;
+    font-size: 52px;
+    font-weight: 300;
+    color: #d2d6da;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header-2-startup-antiflicker {
+    background-color: #2c3e50! important;
+}
+
+.content-5 .features > [class*="col-sm-"] h6 {
+    font-size: 32px;
+    font-weight: normal;
+    color: #34495e;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin-bottom: 14px;
+    text-transform: none;
+    line-height: 26px;
+}
+
+.content-36 h2 {
+    color: #fff;
+    font-size: 66px;
+    line-height: 65px;
+    margin: 0 0 38px;
+    width: 80%;
+    letter-spacing: -2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
