@@ -2401,3 +2401,11 @@ p strong {
     margin-bottom: 20px;
     font-weight: 300;
 }
+
+.content-5 .features > [class*="col-sm-"] p {
+    font-size: 16px;
+    font-weight: normal;
+    color: #7f8c8d;
+    font-size: 16px;
+    font-weight: 700;
+}
