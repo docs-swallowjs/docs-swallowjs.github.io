@@ -2514,3 +2514,11 @@ footer p {
 .content-36 h2 {
     width: 88%;
 }
+
+.highlight {
+    padding: 9px 14px;
+    margin: 14px 0;
+    background-color: #f7f7f9;
+    border: 0px solid #e1e1e8;
+    border-radius: 4px;
+}
