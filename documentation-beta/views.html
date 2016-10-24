@@ -85,8 +85,31 @@ var template_name = $('#' + CONFIG.layoutTemplate('template_name'));
                             SwallowJS templates below</p>
                         <img src="../assets/img/render.png" class="img-responsive" style="padding: 44px 0;"/>
                     </div>
-                    <div id="extending">
-                        <h3> Extending Views </h3>
+
+                    <div id="redirecturl">
+                        <h3> Redirect Url </h3>
+                        <p> Before the <code>redirectUrl</code> function is called, you need to declare it first in the routes <a href="/doc/views"> read more about route </a> example below </p>
+                        <h4>Route Declare:</h4>
+{% highlight html %}
+Path.map("#/users/:user_family/:user_id").to(function () {
+    var data = {
+        user_family: this.params["user_family"],
+        user_id: this.params["user_id"],
+    };
+    renderLayout('template_name', container, data);
+}).enter(clearPanel);
+{% endhighlight %}
+                        <br>
+                        <h4>"redirectUrl" method:</h4>
+                        <p> <code>redirectUrl</code> takes 2 parameter, First params is the layout name, and the second parameter should be an array of data to pass </p>
+{% highlight html %}
+  var params = ['foo','9'];
+  redirectUrl('users', params);
+{% endhighlight %}
+                    </div>
+
+                    <div id="rendering">
+                        <h3> Rendering Views </h3>
                         <p> Below is a quick example how to use mustache.js in swalllowJs </p>
                         <p>Data:</p>
 {% highlight html %}
@@ -125,7 +148,6 @@ data = {
 }
 {% endhighlight %}
                         <p>Template:</p>
-
                         <figure class="highlight">
                             <pre>
                                 Shown.<br>
@@ -187,8 +209,8 @@ data = {
 {% highlight html %}
 No Data :(
 {% endhighlight %}
-
                 </div>
+
             </div>
             <div class="col-sm-3">
                 <div class="related-articles" id="related-articles">
@@ -198,8 +220,9 @@ No Data :(
                     <ul id="navbar-doc-side">
                         <li class=""><a href="#view"> Views </a></li>
                         <li class=""><a href="#layout"> Layout </a></li>
-                        <li class=""><a href="#templates"> Extending Views </a></li>
-                        <li class=""><a href="#extending"> Templates </a></li>
+                        <li class=""><a href="#templates"> Templates </a></li>
+                        <li class=""><a href="#redirecturl"> Redirect Url </a></li>
+                        <li class=""><a href="#rendering"> Rendering Views </a></li>
                         <li class=""><a href="#top" style="font-size: 13px;"> Back to top </a></li>
                     </ul>
                 </div>
