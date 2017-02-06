@@ -1,15 +1,52 @@
-.dropdown-arrow-inverse {
-    border-bottom-color: #34495e !important;
-    border-top-color: #34495e !important;
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helveticaneue/HelveticaNeueIt.ttf) format('ttf');
+    font-style: italic;
+    font-weight: 100
 }
 
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helveticaneue/HelveticaNeueLt.ttf) format('ttf');
+    font-style: normal;
+    font-weight: 100
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helveticaneue/HelveticaNeue.ttf) format('ttf');
+    font-style: normal;
+    font-weight: 300
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helveticaneue/HelveticaNeueMed.ttf) format('ttf');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helveticaneue/HelveticaNeueBd.ttf) format('ttf');
+    font-style: normal;
+    font-weight: 500
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helveticaneue/HelveticaNeueHv.ttf) format('ttf');
+    font-style: normal;
+    font-weight: 600
+}
 /* styles from flat-ui-free2.0.0-fix.less files */
 body {
     color: #34495e;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
     line-height: 1.231;
     position: relative;
+    font-weight: 300
 }
 
 input,
@@ -2483,13 +2520,6 @@ p strong {
     font-weight: 500;
 }
 
-p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.42857143;
-    color: #2c3e50;
-}
-
 blockquote p {
     color: #81878c;
 }
@@ -2515,10 +2545,39 @@ footer p {
     width: 88%;
 }
 
-.highlight {
-    padding: 9px 14px;
-    margin: 14px 0;
-    background-color: #f7f7f9;
-    border: 0px solid #e1e1e8;
-    border-radius: 4px;
+.panel-body code {
+    margin-bottom: 6px;
+    line-height: 23px;
 }
+
+.blog-4 .related-articles a {
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 0px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #767676;
+}
+
+code label {
+    display: inline;
+    padding: .2em .6em .3em;
+    padding: 1px 3px ! important;
+    font-size: 67%;
+    font-weight: bold;
+    line-height: -1;
+    vertical-align: middle;
+    padding: 1px 3px;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.blog-4 h3 {
+    font-weight: 500;
+}
+

@@ -25,7 +25,7 @@ permalink: /doc/services-firebase
             <div class="col-sm-8">
                 <h3 style="font-size: 37px;margin-bottom: 5px;"> Services (Firebase) </h3>
                 <!--<p> Services is fully responsible for managing almost everything regarding your data, its interactions,-->
-                    <!--as well as the evolution of information workflow. </p>-->
+                <!--as well as the evolution of information workflow. </p>-->
 
             </div>
         </div>
@@ -43,7 +43,8 @@ permalink: /doc/services-firebase
                         <div id="swallow_intro">
                             <h3> Understanding SwallowJS (Firebase) Services </h3>
                             <p>Services is fully responsible for managing almost everything regarding your data, its
-                                interactions, as well as the evolution of information workflow.Understanding that this connects mainly with <strong>Firebase</strong> data system reliable
+                                interactions, as well as the evolution of information workflow.Understanding that this
+                                connects mainly with <strong>Firebase</strong> data system reliable
                                 for storing and syncing data in real time across all connected clients </p>
                         </div>
 
@@ -54,7 +55,8 @@ permalink: /doc/services-firebase
                                 <div class="pull-left">FirebaseService.findOne</div>
                                 <div class="pull-right">
                                     <strong>
-                                        <a href="#">source</a>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
                                     </strong>
                                 </div>
                                 <div style="clear: both;"></div>
@@ -67,37 +69,42 @@ permalink: /doc/services-firebase
                                 <div class="col-md-5">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading"> FirebaseService.findOne(
-                                            params, [[success],[error]] )
+                                            params, [&nbsp;[success],[error]&nbsp;] )
                                         </div>
                                         <div class="panel-body">
                                             <div>
                                                 <p>Retrieve a single resource from the Firebase server.</p>
-
                                                 <h4>Parameters</h4>
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading"> params {Object}</div>
                                                     <div class="panel-body">
-                                                        Values to filter the request or results with. <code>
-                                                        params.path </code>
+                                                        Values to filter the request or results with.
+                                                        <code> params.path <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.listenerType <span class="label label-success">optional</span>
+                                                        </code> <br>
+                                                        <code> params.eventType <span class="label label-success">optional</span>
+                                                        </code> <br>
                                                     </div>
                                                 </div>
 
                                                 <div class="panel panel-default">
-                                                    <div class="panel-heading"> function (data)</div>
+                                                    <div class="panel-heading"> function (response)</div>
                                                     <div class="panel-body">
                                                         <h4>Returns</h4>
                                                         <div class="panel panel-success">
-                                                            <div class="panel-heading"> data</div>
+                                                            <div class="panel-heading"> response</div>
                                                             <div class="panel-body">
                                                                 A callback on successful retrieval. The callback
-                                                                receives the retrieved resource as <code> data </code>
+                                                                receives the retrieved resource as <code>
+                                                                response </code>
                                                             </div>
                                                         </div>
                                                         <div class="panel panel-danger">
-                                                            <div class="panel-heading"> data.error</div>
+                                                            <div class="panel-heading"> response.error</div>
                                                             <div class="panel-body">
                                                                 A callback when an error occurs. The callback receives
-                                                                an object <code> data.error </code>
+                                                                an object <code> response.error </code>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -112,23 +119,37 @@ permalink: /doc/services-firebase
                                     <p><code> FirebaseService.findOne() </code> is used to
                                         retrieve a model instance from the server. </p>
                                     <p> Use <code> findOne </code> like: </p>
-{% highlight html %}
-FirebaseService.findOne({
-    path: 'posts/post_one'
-}, function(data) {
-    if(!data.error) {
-        // success
-        console.log(data);
-    } else {
-        // error
-        console.log(data);
-    }
-});
-{% endhighlight %}
-                                    <p>The return data should look like:</p>
-{% highlight html %}
-    {author: "John Deauthor", body: "Conveniently harness fictionalized communities high-impact markets under whelm go.", title: "The post title ", node_id: "post_one"}
-{% endhighlight %}
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.findOne({
+                                                path: 'posts/post_one',
+                                            }, function(response) {
+                                                if(!response.error) {
+                                                    // success
+                                                    console.log(response);
+                                                } else {
+                                                    // error
+                                                    console.log(response);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            listenerType: 'once', // 'on','once'
+                                            eventType: 'value', // 'value', child_added'
+                                        </code>
+                                    </pre>
+                                    <p>The return response should look like:</p>
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            {
+                                               author: "John Deauthor",
+                                               body: "Conveniently harness fictionalized communities high-impact markets under whelm go.",
+                                               title: "The post title ", node_id: "post_one"
+                                            }
+                                        </code>
+                                    </pre>
 
                                 </div>
                             </div>
@@ -142,7 +163,8 @@ FirebaseService.findOne({
                                 <div class="pull-left">FirebaseService.findAll</div>
                                 <div class="pull-right">
                                     <strong>
-                                        <a href="#">source</a>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
                                     </strong>
                                 </div>
                                 <div style="clear: both;"></div>
@@ -166,27 +188,34 @@ FirebaseService.findOne({
                                                     <div class="panel-heading"> params {Object}</div>
                                                     <div class="panel-body">
                                                         Values to filter the request or results with.
-                                                        <code> params.path </code> ,
-                                                        <code> params.limit </code>
+                                                        <code> params.path <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.limit <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.listenerType <span class="label label-success">optional</span>
+                                                        </code> <br>
+                                                        <code> params.eventType <span class="label label-success">optional</span>
+                                                        </code> <br>
                                                     </div>
                                                 </div>
 
                                                 <div class="panel panel-default">
-                                                    <div class="panel-heading"> function (data)</div>
+                                                    <div class="panel-heading"> function (response)</div>
                                                     <div class="panel-body">
                                                         <h4>Returns</h4>
                                                         <div class="panel panel-success">
-                                                            <div class="panel-heading"> data</div>
+                                                            <div class="panel-heading"> response</div>
                                                             <div class="panel-body">
                                                                 A callback on successful retrieval. The callback
-                                                                receives the retrieved resource as <code> data </code>
+                                                                receives the retrieved resource as <code>
+                                                                response </code>
                                                             </div>
                                                         </div>
                                                         <div class="panel panel-danger">
-                                                            <div class="panel-heading"> data.error</div>
+                                                            <div class="panel-heading"> response.error</div>
                                                             <div class="panel-body">
                                                                 A callback when an error occurs. The callback receives
-                                                                an object <code> data.error </code>
+                                                                an object <code> response.error </code>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -200,30 +229,44 @@ FirebaseService.findOne({
                                     <h4> Use </h4>
                                     <p><code> FirebaseService.findAll() </code> is used to
                                         retrieve a model instance from the server. </p>
-                                    <p> Use <code> findAll </code> like: </p>
-{% highlight html %}
-FirebaseService.findOne({
-    path: '/author/posts'
-}, function(data) {
-    if(!data.error) {
-        // success
-        console.log(data);
-    } else {
-        // error
-        console.log(data);
-    }
-});
-{% endhighlight %}
+                                    <p> Use <code> findAll</code> like: </p>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.findAll({
+                                                path: '/author/posts'
+                                                limit: '4'
+                                            }, function(response) {
+                                                if(!response.error) {
+                                                    // success
+                                                    console.log(response);
+                                                } else {
+                                                    // error
+                                                    console.log(response);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            listenerType: 'once', // 'on','once'
+                                            eventType: 'value', // 'value', child_added'
+                                        </code>
+                                    </pre>
+
                                     <p>The return data should look like:</p>
-{% highlight html %}
-{
-    data: [
-        {author: "John Deauthor", body: "post body content.", title: "The post title ", node_id: "post_one"},
-        {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_two"},
-        {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_three"},
-    ]
-{
-{% endhighlight %}
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            {
+                                                data: [
+                                                    {author: "John Deauthor", body: "post body content.", title: "The post title ", node_id: "post_one"},
+                                                    {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_two"},
+                                                    {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_three"},
+                                                ]
+                                            {
+                                        </code>
+                                    </pre>
 
                                 </div>
                             </div>
@@ -237,13 +280,14 @@ FirebaseService.findOne({
                                 <div class="pull-left">FirebaseService.saveData</div>
                                 <div class="pull-right">
                                     <strong>
-                                        <a href="#">source</a>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
                                     </strong>
                                 </div>
                                 <div style="clear: both;"></div>
                             </div>
 
-                            <p>Save/update node to Firebase server.</p>
+                            <p>Save node to Firebase server.</p>
                             <br>
 
                             <div class="row">
@@ -260,20 +304,30 @@ FirebaseService.findOne({
                                                     <div class="panel-heading"> params {Object}</div>
                                                     <div class="panel-body">
                                                         Values to filter the request or results with.
-                                                        <code> params.path </code> ,
-                                                        <code> params.data </code>
+                                                        <code> params.path <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.data <span
+                                                                class="label label-danger">required</span> </code> <br>
                                                     </div>
                                                 </div>
 
                                                 <div class="panel panel-default">
-                                                    <div class="panel-heading"> function (data)</div>
+                                                    <div class="panel-heading"> function (response)</div>
                                                     <div class="panel-body">
                                                         <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> response</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The the node id of
+                                                                the saved data
+                                                                <code>-KT-kz68IJrOajjwg865</code>
+                                                            </div>
+                                                        </div>
                                                         <div class="panel panel-danger">
-                                                            <div class="panel-heading"> data.error</div>
+                                                            <div class="panel-heading"> response.error</div>
                                                             <div class="panel-body">
                                                                 A callback when an error occurs. The callback receives
-                                                                an object <code> data.error </code>
+                                                                an object <code> response.error </code>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -289,42 +343,480 @@ FirebaseService.findOne({
                                         retrieve a model instance from the server. </p>
                                     <p> If <code>saveData()</code> is called an instance is created in Firebase. </p>
 
-{% highlight html %}
-FirebaseService.saveData({
-    path: '/author/posts',
-    data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
-}, function(data) {
-    if(!data.error) {
-        // success
-        console.log(data);
-    } else {
-        // error
-        console.log(data);
-    }
-});
-{% endhighlight %}
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.saveData({
+                                                path: '/author/posts',
+                                                data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
+                                            }, function(data) {
+                                                if(!data.error) {
+                                                    // success
+                                                    console.log(data);
+                                                } else {
+                                                    // error
+                                                    console.log(data);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            listenerType: 'once', // 'on','once'
+                                            eventType: 'value', // 'value', child_added'
+                                        </code>
+                                    </pre>
+
+
                                     <br>
                                     <p> If <code>updateData()</code> is update the instance created on Firebase base on
                                         the node key in this case . <code>-KT-kz68IJrOajjwg865</code></p>
-{% highlight html %}
-FirebaseService.updateData({
-    path: '/author/posts/-KT-kz68IJrOajjwg865',
-    data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
-}, function(data) {
-    if(!data.error) {
-        // success
-        console.log(data);
-    } else {
-        // error
-        console.log(data);
-    }
-});
-{% endhighlight %}
 
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.updateData({
+                                                path: '/author/posts/-KT-kz68IJrOajjwg865',
+                                                data: ({author:"John Deauthor", body: "post body content.", title: "Another post title "})
+                                            }, function(data) {
+                                                if(!data.error) {
+                                                    // success
+                                                    console.log(data);
+                                                } else {
+                                                    // error
+                                                    console.log(data);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
                                 </div>
                             </div>
                         </div>
                         <!--saveData-->
+
+                        <!--deleteData-->
+                        <div id="delete-data">
+                            <h3> deleteData <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.deleteData</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p> Delete node from Firebase server.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.deleteData(
+                                            params, [[success],[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Destroy resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        full path values of the resource to destroy with.
+                                                        <code> params.path <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (response)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> response</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The callback
+                                                                receives the retrieved resource as <code>
+                                                                response </code>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-danger">
+                                                            <div class="panel-heading"> response.error</div>
+                                                            <div class="panel-body">
+                                                                A callback when an error occurs. The callback receives
+                                                                an object <code> response.error </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Use </h4>
+                                    <p><code> FirebaseService.deleteData() </code> is used to destroy
+                                        resource from the server. </p>
+                                    <p> Use <code>deleteData</code> like: </p>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.deleteData({
+                                                path: '/author/posts/-KT-kz68IJrOajjwg865'
+                                            }, function(response) {
+                                                if(!response.error) {
+                                                    // success
+                                                    console.log(response);
+                                                } else {
+                                                    // error
+                                                    console.log(response);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+
+                                    <div class="alert alert-warning" role="alert">
+                                        <div>
+                                            <p>If you don't provide a node path with a unique node id, it will delete the nodes in the json object. Its really important to add the node id with the <code>params.path</code>
+                                                when deleting an instance on the firebase server  </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--deleteData-->
+
+                        <!--customQuery-->
+                        <div id="custom-query">
+                            <h3> customQuery <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.customQuery</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p>Retrieve multiple nodes from Firebase server dynamic query.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.customQuery(
+                                            params, [[success],[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Dynamic query to retrieve multiple resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        Values to filter the request or results with.
+                                                        <code> params.query <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.listenerType <span class="label label-success">optional</span></code> <br>
+                                                        <code> params.eventType <span class="label label-success">optional</span>
+                                                        </code> <br>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (response)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> response</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The callback
+                                                                receives the retrieved resource as <code>
+                                                                response </code>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-danger">
+                                                            <div class="panel-heading"> response.error</div>
+                                                            <div class="panel-body">
+                                                                A callback when an error occurs. The callback receives
+                                                                an object <code> response.error </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Use </h4>
+                                    <p><code> FirebaseService.customQuery() </code> is used to
+                                        retrieve a model instance from the server. </p>
+                                    <p> Use <code> customQuery</code> like: </p>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.customQuery({
+                                                query: firebaseBaseDatabase.ref('author').limitToLast(2).orderByKey(),
+                                            }, function(response) {
+                                                if(!response.error) {
+                                                    // success
+                                                    console.log(response);
+                                                } else {
+                                                    // error
+                                                    console.log(response);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            listenerType: 'once', // 'on','once'
+                                            eventType: 'value', // 'value', child_added'
+                                        </code>
+                                    </pre>
+
+                                    <p>The return data should look like:</p>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            {
+                                                data: [
+                                                    {author: "John Deauthor", body: "post body content.", title: "The post title ", node_id: "post_one"},
+                                                    {author: "John Deauthor", body: "post body content.", title: "Another post title ", node_id: "post_two"},
+                                                ]
+                                            {
+                                        </code>
+                                    </pre>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--customQuery-->
+
+                        <!--incrementValue-->
+                        <div id="increment-value-query">
+                            <h3> incrementValue <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.incrementValue</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p>Increment nodes value in the Firebase server.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.incrementValue(
+                                            params, [[success],[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Dynamic query to retrieve multiple resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        Values to filter the request or results with.
+                                                        <code> params.path <span class="label label-danger">required</span> </code> <br>
+                                                        <code> params.incrementBy (int) <span class="label label-danger">required</span> </code> <br>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (response)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> response</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The callback
+                                                                receives the retrieved resource as <code>
+                                                                response </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Use </h4>
+                                    <p><code> FirebaseService.incrementValue() </code> is used to
+                                        increment a model value instance on the server. </p>
+                                    <p> Use <code> incrementValue</code> like: </p>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.incrementValue({
+                                                path: '/author/posts/-KT-kz68IJrOajjwg865/view',
+                                                incrementBy: 1
+                                            }, function(response) {
+                                                if(!response.error) {
+                                                    // success
+                                                    console.log(response);
+                                                } else {
+                                                    // error
+                                                    console.log(response);
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+
+                                    <p>The return data should look like:</p>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            incrementValue completed
+                                        </code>
+                                    </pre>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--incrementValue-->
+
+                        <!--fileUpload-->
+                        <div id="file-upload">
+                            <h3> fileUpload <span class="badge"> function </span></h3>
+                            <div style="margin-bottom: 10px">
+                                <div class="pull-left">FirebaseService.fileUpload</div>
+                                <div class="pull-right">
+                                    <strong>
+                                        <a target="_blank"
+                                           href="https://github.com/hurlatunde/swallow.js/blob/master/app/swallow/service/initializeFirebaseConnection.js">source</a>
+                                    </strong>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <p>Retrieve multiple nodes from Firebase server.</p>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading"> FirebaseService.findAll(
+                                            params, [[success],[error]] )
+                                        </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Retrieve multiple resource from the Firebase server.</p>
+
+                                                <h4>Parameters</h4>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> params {Object}</div>
+                                                    <div class="panel-body">
+                                                        Values to filter the request or results with.
+                                                        <code> params.path <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.limit <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.listenerType <span class="label label-success">optional</span>
+                                                        </code> <br>
+                                                        <code> params.eventType <span class="label label-success">optional</span>
+                                                        </code> <br>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"> function (response)</div>
+                                                    <div class="panel-body">
+                                                        <h4>Returns</h4>
+                                                        <div class="panel panel-success">
+                                                            <div class="panel-heading"> response</div>
+                                                            <div class="panel-body">
+                                                                A callback on successful retrieval. The callback
+                                                                receives the retrieved resource as <code>
+                                                                response </code>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4> Use </h4>
+                                    <p><code> FirebaseService.fileUpload() </code> is used to upload files instance from the firebase storage. </p>
+                                    <p> Use <code> fileUpload</code> like: </p>
+
+                                    <pre class="language-html">
+                                        <code class="language-html">&lt;input type="file" name="img_src" id="src_input_id"&gt;</code>
+                                    </pre>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            // returns file in input field
+                                            getInputFile('src_input_id');
+                                        </code>
+                                    </pre>
+
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            FirebaseService.fileUpload({
+                                                'file': getInputFile('img_src'),
+                                                'path': '/author/posts/-KT-kz68IJrOajjwg865/image
+                                            }, function (data) {
+                                                console.log(data);
+                                                if (data.downloadURL) {
+                                                   // data.downloadURL
+                                                }
+                                            });
+                                        </code>
+                                    </pre>
+
+                                    <p>Progress status:</p>
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            {
+                                                progress: 82.1
+                                                element: "hklwzqjhguax"
+                                                fileName: "hklwzqjhguax.mp3"
+                                                fileSize: "1.646 MB"
+                                                fileType: "audio/mp3"
+                                            }
+
+                                        </code>
+                                    </pre>
+
+                                    <p>The return data should look like:</p>
+                                    <pre class="language-javascript">
+                                        <code class="language-javascript">
+                                            {
+                                                downloadURL:  "https://firebasestorage.googleapis.com/v0/b/app-gen.appspot.com/o/-KXeLTodVdfAcMNTmVVr%2F-KaGf2Y2jJO9h_p_49g_0Skitmp3.extention"
+                                                element: "hklwzqjhguax"
+                                                fileName: "hklwzqjhguax.mp3"
+                                                fileSize: "1.646 MB"
+                                                fileType: "audio/mp3"
+                                            }
+                                        </code>
+                                    </pre>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--fileUpload-->
 
                         <!--<div id="stuck">-->
                         <!--<h3>Getting Help</h3>-->
@@ -343,7 +835,17 @@ FirebaseService.updateData({
                         <li class=""><a href="#swallow_intro"> Understanding Services </a></li>
                         <li class=""><a href="#find-one"> findOne </a></li>
                         <li class=""><a href="#find-all"> findAll </a></li>
-                        <li class=""><a href="#save-data"> saveData & updateData </a></li>
+                        <li class=""><a href="#save-data"> saveData </a></li>
+                        <li class=""><a href="#save-data"> updateData </a></li>
+                        <li class=""><a href="#delete-data"> deleteData </a></li>
+                        <li class=""><a href="#custom-query"> customQuery </a></li>
+                        <li class=""><a href="#increment-value-query"> incrementValue </a></li>
+                        <li></li>
+                        <li class=""><a href="#file-upload"> fileUpload </a></li>
+                        <li></li>
+                        <li class=""><a href="#init-load-more"> initLoadMore & loadMore </a></li>
+
+
                         <li class=""><a href="#top" style="font-size: 13px;"> Back to top </a></li>
                     </ul>
                 </div>
