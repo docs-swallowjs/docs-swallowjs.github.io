@@ -1,4 +1,6 @@
-<script type="text/javascript" src="{{ site.url }}/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+
+
+<script type="text/javascript" src="{{ site.url }}/assets/js/jquery.scrollTo_min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/modernizr.custom.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/page-transitions.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/easing.min.js"></script>
@@ -8,19 +10,19 @@
 <!--<script type="text/javascript" src="{{ site.url }}/assets/js/startup-kit.js"></script>-->
 
 <script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-
-
-        var stickyHeaderTop = $('#related-articles').offset().top;
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > stickyHeaderTop) {
-                $('#related-articles').css({position: 'fixed', top: '0px'});
-            } else {
-                $('#related-articles').css({position: 'static', top: '0px'});
-            }
-        })
-    });
+//    $(function () {
+//        $('[data-toggle="tooltip"]').tooltip();
+//
+//
+//        var stickyHeaderTop = $('#related-articles').offset().top;
+//        $(window).scroll(function () {
+//            if ($(window).scrollTop() > stickyHeaderTop) {
+//                $('#related-articles').css({position: 'fixed', top: '0px'});
+//            } else {
+//                $('#related-articles').css({position: 'static', top: '0px'});
+//            }
+//        })
+//    });
 </script>
 
 {% if site.owner.google.analytics %}

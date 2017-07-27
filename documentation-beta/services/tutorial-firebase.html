@@ -480,8 +480,10 @@ permalink: /doc/services-firebase
 
                                     <div class="alert alert-warning" role="alert">
                                         <div>
-                                            <p>If you don't provide a node path with a unique node id, it will delete the nodes in the json object. Its really important to add the node id with the <code>params.path</code>
-                                                when deleting an instance on the firebase server  </p>
+                                            <p>If you don't provide a node path with a unique node id, it will delete
+                                                the nodes in the json object. Its really important to add the node id
+                                                with the <code>params.path</code>
+                                                when deleting an instance on the firebase server </p>
                                         </div>
                                     </div>
 
@@ -515,7 +517,8 @@ permalink: /doc/services-firebase
                                         </div>
                                         <div class="panel-body">
                                             <div>
-                                                <p>Dynamic query to retrieve multiple resource from the Firebase server.</p>
+                                                <p>Dynamic query to retrieve multiple resource from the Firebase
+                                                    server.</p>
 
                                                 <h4>Parameters</h4>
                                                 <div class="panel panel-default">
@@ -524,7 +527,8 @@ permalink: /doc/services-firebase
                                                         Values to filter the request or results with.
                                                         <code> params.query <span
                                                                 class="label label-danger">required</span> </code> <br>
-                                                        <code> params.listenerType <span class="label label-success">optional</span></code> <br>
+                                                        <code> params.listenerType <span class="label label-success">optional</span></code>
+                                                        <br>
                                                         <code> params.eventType <span class="label label-success">optional</span>
                                                         </code> <br>
                                                     </div>
@@ -627,15 +631,18 @@ permalink: /doc/services-firebase
                                         </div>
                                         <div class="panel-body">
                                             <div>
-                                                <p>Dynamic query to retrieve multiple resource from the Firebase server.</p>
+                                                <p>Dynamic query to retrieve multiple resource from the Firebase
+                                                    server.</p>
 
                                                 <h4>Parameters</h4>
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading"> params {Object}</div>
                                                     <div class="panel-body">
                                                         Values to filter the request or results with.
-                                                        <code> params.path <span class="label label-danger">required</span> </code> <br>
-                                                        <code> params.incrementBy (int) <span class="label label-danger">required</span> </code> <br>
+                                                        <code> params.path <span
+                                                                class="label label-danger">required</span> </code> <br>
+                                                        <code> params.incrementBy (int) <span
+                                                                class="label label-danger">required</span> </code> <br>
                                                     </div>
                                                 </div>
 
@@ -758,7 +765,8 @@ permalink: /doc/services-firebase
                                 </div>
                                 <div class="col-md-7">
                                     <h4> Use </h4>
-                                    <p><code> FirebaseService.fileUpload() </code> is used to upload files instance from the firebase storage. </p>
+                                    <p><code> FirebaseService.fileUpload() </code> is used to upload files instance from
+                                        the firebase storage. </p>
                                     <p> Use <code> fileUpload</code> like: </p>
 
                                     <pre class="language-html">
@@ -818,10 +826,10 @@ permalink: /doc/services-firebase
                         </div>
                         <!--fileUpload-->
 
-                        <!--<div id="stuck">-->
-                        <!--<h3>Getting Help</h3>-->
-                        <!--If you’re stuck, there are a number to help you out,we are always ready to listen-->
-                        <!--</div>-->
+                        <div id="stuck">
+                        <h3>Getting Help</h3>
+                        If you’re stuck, We are her to to help you out,we are always ready to listen on <a href="https://swallowjs.slack.com/" target="_blank"> Slack </a>
+                        </div>
 
                     </div>
                 </div>
@@ -840,12 +848,8 @@ permalink: /doc/services-firebase
                         <li class=""><a href="#delete-data"> deleteData </a></li>
                         <li class=""><a href="#custom-query"> customQuery </a></li>
                         <li class=""><a href="#increment-value-query"> incrementValue </a></li>
-                        <li></li>
                         <li class=""><a href="#file-upload"> fileUpload </a></li>
-                        <li></li>
                         <li class=""><a href="#init-load-more"> initLoadMore & loadMore </a></li>
-
-
                         <li class=""><a href="#top" style="font-size: 13px;"> Back to top </a></li>
                     </ul>
                 </div>
@@ -856,4 +860,7 @@ permalink: /doc/services-firebase
 
 <script>
     $('body').scrollspy({target: '#navbar-doc-side'})
+    $(document).ready(function(){
+        $("#navbar-doc-side").sticky({topSpacing:0});
+    });
 </script>

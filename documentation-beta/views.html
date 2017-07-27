@@ -44,171 +44,231 @@ permalink: /doc/views
                             <br>
                             <p>
                                 Views are responsible for generating the specific output required for the request.
-                                mustachejs is swallowjs default template engine, Logic-less mustache templates with live binding when used.
+                                mustachejs is swallowjs default template engine, Logic-less mustache templates with live
+                                binding when used.
                             </p>
                             <br>
                             <br>
 
                             <blockquote>
-                            <p>
-                                Mustache is a logic-less template syntax. It can be used for HTML, config files, source
-                                code - anything. It works by expanding tags in a template using values provided in a
-                                hash or object.
-                                <footer> Logic-less {{mustache}} templates with JavaScript <cite title="Source Title"> <a href="https://github.com/janl/mustache.js"> mustache.js </a> </cite></footer>
-                            </p>
+                                <p>
+                                    Mustache is a logic-less template syntax. It can be used for HTML, config files,
+                                    source
+                                    code - anything. It works by expanding tags in a template using values provided in a
+                                    hash or object.
+                                    <footer> Logic-less {{mustache}} templates with JavaScript <cite
+                                            title="Source Title"> <a href="https://github.com/janl/mustache.js">
+                                        mustache.js </a> </cite></footer>
+                                </p>
                             </blockquote>
                         </div>
 
                     </div>
                     <div id="layout">
                         <h3> Declare Layout </h3>
-                        <p> Layout in SwallowJs has to be declared in <code>config.js</code> under the variable of
-                            layout, each layout has to be in the layout object array </p>
-{% highlight html %}
-var SwallowJs = {
-    'main_container': 'swallow',
-};
+                        <p> views in SwallowJs has to be declared in <code>config.js</code> under the variable of
+                            view, each view has to be in the layout object array </p>
+                        <pre class="language-javascript"><code class="language-javascript">
+                            var SwallowJs = {
+                                'main_container': 'swallow',
+                            };
 
-// Templates
-var layout = {
-    'template_name':  'layouts/template_name.html',
-};
+                            // Templates
+                            var views = {
+                                'template_name':  'views/template_name.html',
+                            };
 
-var container     = $('#' + CONFIG.private('main_container'));
-var template_name = $('#' + CONFIG.layoutTemplate('template_name'));
-{% endhighlight %}
+                            var template_name = $('#' + CONFIG.layoutTemplate('template_name'));
+                        </code> </pre>
+                        <p> Declare parent identifier in your <code>route.js</code>. Please note that this as to come
+                            first </p>
+                        <pre class="language-javascript"><code class="language-javascript">
+                            // parent identifier
+                            var default_container = $('#default_container');
+                        </code> </pre>
+
                     </div>
                     <div id="templates">
                         <h3> View Templates </h3>
-                        <p> View files are stored in <code>layouts/</code> folder, template renders it with
-                            data and helper functions and returns the HTML in the template, Quick example of how to use
+                        <p> View files are stored in <code>views/</code> folder, template renders it with data and
+                            helper functions and returns the HTML in the template, Quick example of how to use
                             SwallowJS templates below</p>
                         <img src="../assets/img/render.png" class="img-responsive" style="padding: 44px 0;"/>
                     </div>
 
                     <div id="redirecturl">
                         <h3> Redirect Url </h3>
-                        <p> Before the <code>redirectUrl</code> function is called, you need to declare it first in the routes <a href="/doc/views"> read more about route </a> example below </p>
+                        <p> Before the <code>redirectUrl</code> function is called, you need to declare the route first
+                            in the
+                            routes <a href="/doc/routes"> read more about route </a> example below </p>
                         <h4>Route Declare:</h4>
-{% highlight html %}
-Path.map("#/users/:user_family/:user_id").to(function () {
-    var data = {
-        user_family: this.params["user_family"],
-        user_id: this.params["user_id"],
-    };
-    renderLayout('template_name', container, data);
-}).enter(clearPanel);
-{% endhighlight %}
+                        <pre class="language-javascript"><code class="language-javascript">
+                        Path.map("#/users/:user_family/:user_id").to(function () {
+                            var data = {
+                                user_family: this.params["user_family"],
+                                user_id: this.params["user_id"],
+                            };
+                            renderViews('template_name', container, data);
+                        }).enter(clearPanel);
+                         </code> </pre>
                         <br>
                         <h4>"redirectUrl" method:</h4>
-                        <p> <code>redirectUrl</code> takes 2 parameter, First params is the layout name, and the second parameter should be an array of data </p>
-{% highlight html %}
-  var params = ['foo','9'];
-  redirectUrl('users', params);
-{% endhighlight %}
+                        <p><code>redirectUrl</code> takes 2 parameter, First params is the layout name, and the second
+                            parameter should be an array of data </p>
+                        <pre class=language-javascript><code class="language-javascript">
+                        redirectUrl('/users/foo/9');
+                         </code> </pre>
                     </div>
 
                     <div id="rendering">
                         <h3> Rendering Views </h3>
-                        <p> Below is a quick example how to use mustache.js in swalllowJs </p>
-                        <p>Data:</p>
-{% highlight html %}
-data = {
-    "name": {
-        "first": "John",
-        "last": "Foo"
-    },
-    "country": "Nigeria"
-}
-{% endhighlight %}
-                        <p>Template:</p>
-                        <figure class="highlight">
-                            <pre>
-                                &#123;&#123; #data &#125;&#125; <br>
-                                * &#123;&#123; name.first &#125;&#125; &#123;&#123; name.last &#125;&#125; <br>
-                                * &#123;&#123; #age &#125;&#125; <br>
-                                &#123;&#123; /data &#125;&#125; <br>
-                            </pre>
-                        </figure>
-                        <p>Output:</p>
-{% highlight html %}
-    * John Foo
-    * Nigeria
-{% endhighlight %}
-                        <br>
-                        <h4> Statement </h4>
-                        <p>A statement begins with a pound and ends with a slash. That is, {{#data}} begins a person section, while {{/data}} ends it.</p>
-                        <p> The behavior of the statement is determined by the value of the key <strong>False Values or Empty Lists</strong> </p>
+                        <p> Below is a quick example how swalllowJs handles view</p>
+                        <pre class="language-json"><code class="language-html">
+                        data = {
+                            "name": {
+                                "first": "John",
+                                "last": "Foo"
+                            },
+                            "country": "Nigeria"
+                        }
+                         </code> </pre>
 
-                        <p>If the data key does not exist, or exists and has a value of null, undefined, false, 0, or NaN, or is an empty string or an empty list, the block will not be rendered.</p>
-                        <p>Data:</p>
-{% highlight html %}
-data = {
-    "person": false
-}
-{% endhighlight %}
-                        <p>Template:</p>
-                        <figure class="highlight">
-                            <pre>
-                                Shown.<br>
-                                &#123;&#123; #data &#125;&#125; <br>
-                                Never shown! <br>
-                                &#123;&#123; /data &#125;&#125; <br>
-                            </pre>
-                        </figure>
-                        <p>Output:</p>
-{% highlight html %}
-Shown.
-{% endhighlight %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>Template:</p>
+                                        <pre class="language-html"><code class="language-html">
+                                &#123;&#123; #data &#125;&#125;
+                                * &#123;&#123; name.first &#125;&#125; &#123;&#123; name.last &#125;&#125;
+                                * &#123;&#123; #country &#125;&#125;
+                                &#123;&#123; /data &#125;&#125;
+                                </code> </pre>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Output:</p>
+                                        <pre class="language-html"><code class="language-html">
+                                 * John Foo
+                                 * Nigeria
+                                 </code> </pre>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4> Statement </h4>
+                        <p>A statement begins with a pound and ends with a slash. That is,<strong> &#123;&#123; #data
+                            &#125;&#125;</strong> begins a person
+                            section, while <strong>&#123;&#123; /data &#125;&#125;</strong> ends it. The behavior of the
+                            statement is determined by the value of the key </p>
+
+                        <h4> False Values or Empty Lists </h4>
+                        <p>If the data key does not exist, or exists and has a value of null, undefined, false, 0, or
+                            NaN, or is an empty string or an empty list, the block will not be rendered.</p>
+                        <pre class="language-html"><code class="language-html">
+                        data = {
+                           "person": false
+                        }
+                         </code> </pre>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>Template:</p>
+                                        <pre class="language-html"><code class="language-html">
+                                            Shown.
+                                            &#123;&#123; #data &#125;&#125;
+                                            Never shown!
+                                            &#123;&#123; /data &#125;&#125;
+                                    </code> </pre>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Output:</p>
+                                        <pre class="language-html"><code class="language-html">
+                                        Shown.
+                                         </code> </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <br>
                     <h4> More Example </h4>
-                    <p>If the value of a section variable is a function, it will be called in the context of the current item in the list on each iteration.</p>
+                    <p>If the value of a section variable is a function, it will be called in the context of the
+                        current
+                        item in the list on each iteration.</p>
                     <p>View:</p>
-{% highlight html %}
-data = {
-    "beatles": [
-        { "firstName": "John", "lastName": "Lennon" },
-        { "firstName": "Paul", "lastName": "McCartney" },
-        { "firstName": "George", "lastName": "Harrison" },
-        { "firstName": "Ringo", "lastName": "Starr" }
-    ],
-    "name": function () {
-        return this.firstName + " " + this.lastName;
-    }
-}
-{% endhighlight %}
-                    <p>Template:</p>
-{% highlight html %}
-{{#data.beatles}}
-* {{name}}
-{{/data.beatles}}
-{% endhighlight %}
-                    <p>Output:</p>
-{% highlight html %}
-* John Lennon
-* Paul McCartney
-* George Harrison
-* Ringo Starr
-{% endhighlight %}
-                    <br>
+                    <pre class="language-html"><code class="language-html">
+                    data = {
+                    "beatles": [
+                            { "firstName": "John", "lastName": "Lennon" },
+                            { "firstName": "Paul", "lastName": "McCartney" },
+                            { "firstName": "George", "lastName": "Harrison" },
+                            { "firstName": "Ringo", "lastName": "Starr" }
+                        ],
+                        "full_name": function () {
+                            return this.firstName + " " + this.lastName;
+                        }
+                    }
+                     </code> </pre>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Template:</p>
+                                    <pre class="language-html"><code class="language-html">
+                                &#123;&#123; #data.beatles &#125;&#125;
+                                  *  &#123;&#123; full_name &#125;&#125;
+                                &#123;&#123; /data.beatles &#125;&#125;
+                                 </code> </pre>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Output:</p>
+                                    <pre class="language-html"><code class="language-html">
+                                * John Lennon
+                                * Paul McCartney
+                                * George Harrison
+                                * Ringo Starr
+                                 </code> </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <h4> Inverted Sections </h4>
-                    <p>An inverted section opens with <code>{{^section}}</code> instead of <code>{{#section}}</code>. The block of an inverted section is rendered only if the value of that section's tag is null, undefined, false, falsy or an empty list.</p>
+                    <p>An inverted section opens with <code>&#123;&#123; ^section &#125;&#125;</code> instead of <code> &#123;&#123;#section &#125;&#125;</code>.
+                        The block of an inverted section is rendered only if the value of that section's tag is
+                        null, undefined, false, falsy or an empty list.</p>
                     <p>View:</p>
-{% highlight html %}
-{
-"data": []
-}
-{% endhighlight %}
-                    <p>Template:</p>
-{% highlight html %}
-{{#data}} **{{name}}** {{/data}}
-{{^data}}No Data :({{/data}}
-{% endhighlight %}
-                    <p>Output:</p>
-{% highlight html %}
-No Data :(
-{% endhighlight %}
+                    <pre class="language-html"><code class="language-html">
+                    {
+                      "data": []
+                    }
+                     </code> </pre>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                <p>Template:</p>
+                                <pre class="language-html"><code class="language-html">
+                                &#123;&#123;#data &#125;&#125; **&#123;&#123;name &#125;&#125;** &#123;&#123;/data &#125;&#125;
+                                &#123;&#123;^data &#125;&#125; No Data :( &#123;&#123;/data &#125;&#125;
+                                 </code> </pre>
+                                </div>
+                                <div class="col-md-6">
+                                <p>Output:</p>
+                                <pre class="language-html"><code class="language-html">
+                                No Data :(
+                                 </code> </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -233,4 +293,7 @@ No Data :(
 
 <script>
     $('body').scrollspy({target: '#navbar-doc-side'})
+    $(document).ready(function(){
+        $("#navbar-doc-side").sticky({topSpacing:0});
+    });
 </script>

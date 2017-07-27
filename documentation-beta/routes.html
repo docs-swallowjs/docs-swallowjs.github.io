@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Swallow Js Documentation || Beta v0.29
-permalink: /doc/route
+permalink: /doc/routes
 ---
 <div id="top"></div>
 
@@ -29,19 +29,108 @@ permalink: /doc/route
     </div>
 </section>
 
-
 <section class="blog-4 doc">
     <div class="container">
         <div class="row">
             <div class="col-sm-9">
-                <div>
-                    <div class="scrollspy-example" data-offset="0">
-
-                        <div id="view">
-                        </div>
+                <div class="scrollspy-example" data-offset="0">
+                    <div id="view">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>
+                            Swallow route allows you to create "single page" applications using Hashbangs and HTML5 pushState, purely javascript.
+                        </p>
+                        <br>
                     </div>
+
+                    <div id="Brief">
+                        <h3> Using Route - A Brief Example  </h3>
+                        <pre class="language-javascript"><code class="language-javascript">
+                            // You can use any methods as actions. You can define them as I do below,
+                            // assign them to variables, or use anonymous functions.  The choice is yours.
+                            function notFound() {
+                                renderView('404', swallowJsContainer);
+                            }
+
+                            function notFound() {
+                                $("#output .content").html("404 Not Found");
+                            }
+                        </code> </pre>
+                        <p> Below we define our routes.  You'll notice that we only define three routes, even though there are four links.
+                            Each route has an action assigned to it (via the `to` method, as well as an `enter` method. The `enter` method is called before
+                            the route is performed, which allows you to do any setup you need (changes classes, performing AJAX calls, adding animations, etc. </p>
+                        <!-- <p> Declare parent identifier in your <code>route.js</code>. Please note that this as to come
+                            first </p> -->
+                        <pre class="language-javascript"><code class="language-javascript">
+                            Path.map("/users").to(function () {
+                                renderView('layout_user', swallowJsContainer);
+                            }).enter(this_function_is_called);
+
+                            Path.map("/about").to(function () {
+                                renderView('layout_about', swallowJsContainer);
+                            }).enter(this_function_is_called);
+
+                            Path.map("/contact").to(function () {
+                                renderView('layout_contact', swallowJsContainer);
+                            }).enter(this_function_is_called);
+
+                            function this_function_is_called() {
+                              // You can put some code in here to do fancy DOM transitions, such as fade-out or slide-in.
+                            }
+                        </code> </pre>
+
+                    </div>
+                    <div id="route_with_params">
+                        <h3> Parametrized route  </h3>
+                        <p>This route will match things such as <code>"#/users/1", "#/users/500", and "#/users/mike"</code>.  Inside the action of that route, you have access to the parameters via the <code>`this.params`</code> object.</p>
+                        <pre class="language-javascript"><code class="language-javascript">
+                            Path.map("#/users/:user_id").to(function(){
+                                var user_id = this.params["user_id"];
+                                logMessage(user_id);
+                            });
+                        </code> </pre>
+                    </div>
+                    <div id="route_with_params_option">
+                        <h3> Optional Parametrized route  </h3>
+                        <p>This is a route with optional components.  Optional components in a route are contained within brackets.  The route below will match both <code>"#/about" and "#/about/olatunde"</code>.</p>
+                        <pre class="language-javascript"><code class="language-javascript">
+                            Path.map("#/about(/author)").to(function(){
+                                logMessage(About & About/Author share a route!);
+                            });
+                        </code> </pre>
+                    </div>
+                </div>
+            </div>
+
+<script>
+
+
+</script>
+
+
+            <div class="col-sm-3">
+                <div class="related-articles" id="related-articles">
+                    <br>
+                    <br>
+                    <br>
+                    <ul id="navbar-doc-side">
+                        <li class=""><a href="#view"> Routes </a></li>
+                        <li class=""><a href="#Brief"> Brief </a></li>
+                        <li class=""><a href="#route_with_params"> Parametrized Route </a></li>
+                        <li class=""><a href="#route_with_params_option"> Optional Parametrized Route </a></li>
+                        <li class=""><a href="#top" style="font-size: 13px;"> Back to top </a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    $('body').scrollspy({target: '#navbar-doc-side'})
+    $(document).ready(function () {
+        $("#navbar-doc-side").sticky({topSpacing: 0});
+    });
+</script>

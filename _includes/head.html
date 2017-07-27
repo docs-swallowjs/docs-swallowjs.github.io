@@ -7,6 +7,8 @@
     <meta name="description"
           content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+    <link href='https://fonts.googleapis.com/css?family=Product+Sans:100,300,400,400i,700,700i|Roboto Mono' rel='stylesheet' type='text/css'>
+
     <!-- CSS files -->
     <link rel="stylesheet" href="{{ site.url }}/assets/css/bootstrap.css">
     <link rel="stylesheet" href="{{ site.url }}/assets/css/flat-ui.css">
@@ -15,8 +17,7 @@
     <link rel="stylesheet" href="{{ site.url }}/assets/css/prism.css">
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "
-    /feed.xml " | prepend: site.url }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml " | prepend: site.url }}" />
 
     <!-- Icons -->
     <!-- 16x16 -->
@@ -26,10 +27,9 @@
 
     <script type="text/javascript" src="{{ site.url }}/assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="{{ site.url }}/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.sticky.js"></script>
 
-    <script src="{{ "
-    /assets/js/prism.js" | prepend: site.baseurl }}"></script>
-
+    <script src="{{"/assets/js/prism.js" | prepend: site.baseurl }}"></script>
 
     </head>
 

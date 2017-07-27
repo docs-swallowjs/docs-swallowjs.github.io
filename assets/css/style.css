@@ -1,59 +1,47 @@
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../fonts/helveticaneue/HelveticaNeueIt.ttf) format('ttf');
-    font-style: italic;
-    font-weight: 100
+/*@font-face {*/
+    /*font-family: 'ProductSans-Bold';*/
+    /*src: url('../fonts/Product_Sans_Bold.ttf') format('truetype');*/
+/*}*/
+
+/*@font-face {*/
+    /*font-family: 'Product-Sans-Regular';*/
+    /*src: url('../fonts/product_sans_regular.ttf') format('truetype');*/
+/*}*/
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../fonts/helveticaneue/HelveticaNeueLt.ttf) format('ttf');
-    font-style: normal;
-    font-weight: 100
+code, kbd, pre, samp , code[class*="language-"], pre[class*="language-"] {
+    font-family: 'Roboto Mono', Monaco, courier, monospace ! important;
+    background-color: #f8f8f8;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: initial;
 }
 
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../fonts/helveticaneue/HelveticaNeue.ttf) format('ttf');
-    font-style: normal;
-    font-weight: 300
-}
-
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../fonts/helveticaneue/HelveticaNeueMed.ttf) format('ttf');
-    font-style: normal;
-    font-weight: 400
-}
-
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../fonts/helveticaneue/HelveticaNeueBd.ttf) format('ttf');
-    font-style: normal;
-    font-weight: 500
-}
-
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../fonts/helveticaneue/HelveticaNeueHv.ttf) format('ttf');
-    font-style: normal;
-    font-weight: 600
-}
-/* styles from flat-ui-free2.0.0-fix.less files */
 body {
-    color: #34495e;
-    font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.231;
-    position: relative;
-    font-weight: 300
+    font-family: 'Product Sans', Arial, sans-serif;
+
+    color: #3f3f45;
+    background: #fff;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+pre[class*="language-"] {
+    margin: 2.5em 0! important;
+    font-weight: 100;
 }
 
 input,
 button,
 select,
 textarea {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
 
@@ -151,6 +139,13 @@ p {
     line-height: 1.722169;
     /* 31px */
 
+}
+
+h4, .h4 {
+    font-size: 16px /* 29px */;
+    font-weight: 900;
+    margin-top: 3px;
+    margin-bottom: 6px;
 }
 
 .lead {
@@ -664,7 +659,6 @@ h5,
 .h5,
 h6,
 .h6 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #2c3e50;
 }
 
@@ -696,7 +690,6 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: normal;
     color: #7f8c8d;
@@ -761,7 +754,6 @@ button:active {
     padding: 0;
     width: 30px;
     height: 30px;
-    background: url("../../../common-files/icons/menu-icon@2x.png") 50% no-repeat;
     -webkit-background-size: 17px 12px;
     -moz-background-size: 17px 12px;
     -o-background-size: 17px 12px;
@@ -985,7 +977,6 @@ header .brand {
     font-size: 25px;
     font-weight: normal;
     color: #34495e;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 800;
     letter-spacing: -1px;
     color: #2c3e50;
@@ -1055,7 +1046,6 @@ section * {
     position: absolute;
     z-index: 2;
     top: 55px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .header-2 .navbar.navbar-fixed-top {
@@ -1067,7 +1057,6 @@ section * {
     font-weight: normal;
     color: #ffffff;
     font-weight: 800;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .header-2 .navbar .brand img:first-child {
@@ -1291,7 +1280,6 @@ section * {
     font-size: 30px;
     font-weight: normal;
     color: #2c3e50;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 48px;
     font-weight: 300;
 }
@@ -1329,7 +1317,6 @@ section * {
     font-size: 22px;
     font-weight: normal;
     color: #2c3e50;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 15px;
@@ -1439,7 +1426,6 @@ section * {
     font-weight: normal;
     color: #ffffff;
     line-height: 16px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: none;
 }
 
@@ -1581,7 +1567,6 @@ section * {
     text-align: center;
     background: #f2f2f1;
     color: #7f8c8d;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .content-32 .lead {
@@ -1595,7 +1580,6 @@ section * {
     font-size: 35px;
     font-weight: normal;
     color: #2c3e50;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     line-height: 40px;
     margin: 0 0 48px;
@@ -1618,7 +1602,6 @@ section * {
 
 .content-32 .features h6 {
     text-transform: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     font-size: 20px;
     margin: 0 0 20px;
@@ -1737,7 +1720,6 @@ section * {
     font-weight: normal;
     color: #ffffff;
     line-height: 16px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: none;
 }
 
@@ -1892,12 +1874,7 @@ section * {
     font-size: 30px;
     font-weight: normal;
     color: #2c3e50;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 20px;
-    font-weight: 300;
-    font-weight: 700;
-
-    font-weight: 300;
     font-size: 45px ! important;
 }
 
@@ -1905,7 +1882,6 @@ section * {
     font-size: 20px;
     font-weight: normal;
     color: #2c3e50;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: normal;
     font-weight: 200;
 }
@@ -1972,13 +1948,9 @@ section * {
 
 .content-5 h3 {
     margin: 0 0 21px;
-    font-size: 35px;
-    font-weight: normal;
     color: #2c3e50;
-
-    font-size: 49px;
+    font-size: 34px;
     font-weight: 300;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -1992,7 +1964,6 @@ section * {
     font-size: 25px;
     font-weight: normal;
     color: #7f8c8d;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     text-align: center;
 }
@@ -2041,7 +2012,6 @@ section * {
     font-size: 22px;
     font-weight: normal;
     color: #34495e;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     margin-bottom: 14px;
     text-transform: none;
@@ -2069,7 +2039,6 @@ section * {
 
 .blog-4 h6 {
     font-size: 20px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     margin: 0 0 25px;
     text-transform: none;
@@ -2105,7 +2074,6 @@ section * {
     margin: 60px 0 55px 40px;
     font-size: 37px;
     line-height: 50px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #2c3e50;
     font-weight: 300;
     letter-spacing: -1px;
@@ -2128,7 +2096,6 @@ section * {
 .blog-4 .tags {
     margin-top: 70px;
     font-size: 12px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.19em;
@@ -2172,7 +2139,6 @@ section * {
 
 .blog-4 .related-articles h6 {
     font-size: 19px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     margin: 0 0 30px;
 }
@@ -2266,7 +2232,6 @@ figure figcaption {
     font-size: 30px;
     font-weight: normal;
     color: #2c3e50;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     margin-bottom: 24px;
 }
@@ -2275,7 +2240,6 @@ figure figcaption {
     font-size: 16px;
     font-weight: normal;
     color: #7f8c8d;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 29.999999999999996px;
 }
 
@@ -2373,7 +2337,6 @@ figure figcaption {
     font-size: 20px;
     font-weight: normal;
     color: #34495e;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     text-transform: none;
 }
@@ -2470,9 +2433,8 @@ p strong {
 
     line-height: 65px;
     font-size: 52px;
-    font-weight: 300;
+    font-weight: 100;
     color: #d2d6da;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .header-2-startup-antiflicker {
@@ -2483,7 +2445,6 @@ p strong {
     font-size: 32px;
     font-weight: normal;
     color: #34495e;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     margin-bottom: 14px;
     text-transform: none;
@@ -2492,7 +2453,7 @@ p strong {
 
 .content-36 h2 {
     color: #fff;
-    font-size: 66px;
+    font-size: 58px;
     line-height: 65px;
     margin: 0 0 38px;
     width: 80%;
@@ -2507,7 +2468,6 @@ p strong {
     font-weight: normal;
     color: #7f8c8d;
     font-size: 16px;
-    font-weight: 700;
 }
 
 .div-sections > h3 {
@@ -2534,7 +2494,7 @@ footer p {
 .content-36 p {
     margin: 0 auto;
     width: 72%;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 31px;
     font-weight: 100;
     margin-bottom: 28px;
@@ -2578,6 +2538,198 @@ code label {
 }
 
 .blog-4 h3 {
-    font-weight: 500;
+    font-size: 29px;
+    margin: 18px 0 8px 0;
+    padding-top: 10px;
+    font-weight: 600;
 }
 
+.header-3-sub h3 {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 32px ! important;
+}
+
+.header-3-sub p {
+    font-size: 17px;
+    color: #5f6d7b;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.header-2-sub .btn.btn-danger {
+    background-color: #c0392b;
+    font-size: 20px;
+    padding: 15px 21px;
+    border-radius: 40px;
+}
+
+.header-2 .navbar .nav > li > a {
+    padding: 29px 0 28px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.header-2-sub .btn.btn-danger {
+    background-color: #c0392b;
+    font-size: 11px;
+    padding: 6px 46px;
+    border-radius: 40px;
+    width: auto;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.h_style {
+    color: #c0392b;
+    border: 1px solid #c0392b;
+    background-color: transparent ! important;
+}
+
+.h_style:hover {
+    color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
+p {
+    font-size: 18.004px;
+    line-height: 1.722169;
+    color: #616161;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+
+.header-2-startup-antiflicker {
+    /*background-color: rgba(255,255,255,0.4) ! important;*/
+    box-shadow: 0 0 1px rgba(0,0,0,0.25);
+    /*transition: background-color 0.3s ease-in-out;*/
+}
+
+.blog-4 .related-articles a {
+    color: #2c3e50;
+    display: block;
+    padding: 0px 16px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.blog-4 .related-articles li + li {
+    margin-top: 3px;
+}
+
+.panel-heading {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+pre {
+    border: 0px solid #e7e9ec;
+    border-radius: 4px;
+}
+
+pre[class*="language-"] {
+    padding: 2em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+pre.code-toolbar > .toolbar {
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1! important;
+}
+
+pre.code-toolbar > .toolbar a, pre.code-toolbar > .toolbar button, pre.code-toolbar > .toolbar span {
+    color: #bbb! important;
+    font-size: 11px! important;
+    padding: 10px! important;
+    background: #f5f2f0! important;
+    background: transparent! important;
+    box-shadow: 0 0px 0 0 rgba(0,0,0,0.2)! important;
+    border-radius: 0px! important;
+    text-transform: uppercase! important;
+    font-weight: 700! important;
+    font-family: 'Product Sans', Arial, sans-serif;
+}
+
+blockquote p {
+    font-size: 17px;
+    line-height: inherit;
+    font-weight: 300;
+    margin-bottom: .4em;
+    margin-bottom: 10px ! important;
+}
+
+.footer-10 .subscribe-form {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.subscribe-form form {
+    margin: 0;
+    position: relative;
+}
+
+.footer-10 .subscribe-form input[type="text"] {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: 59.99999999999999px;
+    font-size: 50px;
+    font-weight: normal;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.footer-10 .subscribe-form .col-sm-4 {
+    text-align: right;
+}
+
+.footer-10 .subscribe-form .btn {
+    margin-top: 8px;
+    font-weight: 500;
+    width: 220px;
+    max-width: 100%;
+}
+
+[class*="fui-"] {
+    font-size: 60px;
+    font-weight: normal;
+    color: #e74c3c;
+    vertical-align: baseline;
+}
+
+.blog-4 .related-articles a {
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+pre[class*="language-"] {
+    margin: 0.5em 0px 1.5em 0! important;
+    font-weight: 100;
+}
+
+#navbar-doc-side {
+    margin-top: 30px;
+}
+
+.header-2 .navbar .nav > li > a {
+    padding: 29px 0 28px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
